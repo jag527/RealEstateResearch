@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jonathan Grossman">
+
+<title>Real Estate Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="analysis_files/libs/clipboard/clipboard.min.js"></script>
+<script src="analysis_files/libs/quarto-html/quarto.js"></script>
+<script src="analysis_files/libs/quarto-html/popper.min.js"></script>
+<script src="analysis_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="analysis_files/libs/quarto-html/anchor.min.js"></script>
+<link href="analysis_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="analysis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="analysis_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="analysis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="analysis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Real Estate Research</h1>
+<p class="subtitle lead">Independent Project</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jonathan Grossman </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="general-idea-of-the-research" class="level2">
+<h2 class="anchored" data-anchor-id="general-idea-of-the-research">General Idea of the Research</h2>
+<p>This will be a large (very large) scale data analysis project focusing on potential targets for real estate development in the United States. The project will focus on counties as the targets, as opposed to smaller scale such as towns or districts. Moreover, the project will focus on the metropolitan area of the United States (NY, NJ, CT, and PA).</p>
+<p>In this project, I’m bringing together vast datasets into one mission. I’m taking data regarding population and census, income, fair market rents, population trends, and permitting trends nationwide. The research question is as follows:</p>
+<section id="where-are-there-opportunities-to-develop-real-estate" class="level3">
+<h3 class="anchored" data-anchor-id="where-are-there-opportunities-to-develop-real-estate">Where are there opportunities to develop real estate?</h3>
+<p>Specifically, we’re going to be targetting the middle class. For this reason, the rent data being used and incorporated follows the 40-50th percentile of rents in counties nationwide.</p>
+<p>The data used in this project has been collected from the following sources. No data is my own.</p>
+<ul>
+<li><p>Permitting data: https://www.census.gov/construction/bps/index.html</p></li>
+<li><p>FMR data: https://www.huduser.gov/portal/datasets/fmr.html</p></li>
+<li><p>Vacancy data: https://www.huduser.gov/portal/datasets/lowvactpv.html</p></li>
+<li><p>Census data: https://www.census.gov/newsroom/press-releases/2023/population-estimates-counties.html</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.3      ✔ forcats 0.5.2 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ────────────────────────────────────── tidymodels 1.0.0 ──
+✔ broom        1.0.2     ✔ rsample      1.1.1
+✔ dials        1.1.0     ✔ tune         1.0.1
+✔ infer        1.0.4     ✔ workflows    1.1.2
+✔ modeldata    1.0.1     ✔ workflowsets 1.0.0
+✔ parsnip      1.0.3     ✔ yardstick    1.1.0
+✔ recipes      1.0.3     
+── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
+✖ scales::discard() masks purrr::discard()
+✖ dplyr::filter()   masks stats::filter()
+✖ recipes::fixed()  masks stringr::fixed()
+✖ dplyr::lag()      masks stats::lag()
+✖ yardstick::spec() masks readr::spec()
+✖ recipes::step()   masks stats::step()
+• Use suppressPackageStartupMessages() to eliminate package startup messages</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>metro_states <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"NY"</span>, <span class="st">"NJ"</span>, <span class="st">"DE"</span>, <span class="st">"PA"</span>, <span class="st">"CT"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>fmr_40percent <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/FY_23_FMR_40percent.xlsx"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>fmr_50percent <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/FY_23_FMR_50percent.xlsx"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>fmr_40percent <span class="ot">&lt;-</span> fmr_40percent <span class="sc">|&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state_alpha <span class="sc">%in%</span> metro_states) </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>fmr_50percent <span class="ot">&lt;-</span> fmr_50percent <span class="sc">|&gt;</span> </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state_alpha <span class="sc">%in%</span> metro_states) </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>fmr_40_50_towns <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(fmr_40percent, fmr_50percent, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"fips"</span> <span class="ot">=</span> <span class="st">"fips2010"</span>))</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>fmr_cols <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"fips"</span>, <span class="st">"countyname"</span>, <span class="st">"state_alpha.x"</span>, <span class="st">"pop2020.x"</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"town_name"</span>, <span class="st">"hud_areaname"</span>, <span class="st">"hud_area_code.x"</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"fmr_0"</span>, <span class="st">"fmr_1"</span>, <span class="st">"fmr_2"</span>, <span class="st">"fmr_3"</span>, <span class="st">"fmr_4"</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rent_50_0"</span>, <span class="st">"rent_50_1"</span>, <span class="st">"rent_50_2"</span>, <span class="st">"rent_50_3"</span>, <span class="st">"rent_50_4"</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>fmr_40_50_towns <span class="ot">&lt;-</span> fmr_40_50_towns <span class="sc">|&gt;</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(fmr_cols) <span class="sc">|&gt;</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">state_abbr =</span> state_alpha.x, <span class="at">population =</span> pop2020.x, </span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">county_name =</span> countyname, <span class="at">hud_area_code =</span> hud_area_code.x,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">rent_40_0 =</span> fmr_0, <span class="at">rent_40_1 =</span> fmr_1, <span class="at">rent_40_2 =</span> fmr_2,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">rent_40_3 =</span> fmr_3, <span class="at">rent_40_4 =</span> fmr_4</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
+ℹ Please use `all_of()` or `any_of()` instead.
+  # Was:
+  data %&gt;% select(fmr_cols)
+
+  # Now:
+  data %&gt;% select(all_of(fmr_cols))
+
+See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fmr_40_50_towns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 322 × 17
+   fips  count…¹ state…² popul…³ town_…⁴ hud_a…⁵ hud_a…⁶ rent_…⁷ rent_…⁸ rent_…⁹
+   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1 0900… Fairfi… CT        19822 Bethel… Danbur… METRO1…    1350    1622    2019
+ 2 0900… Fairfi… CT       145014 Bridge… Bridge… METRO1…    1105    1332    1652
+ 3 0900… Fairfi… CT        17010 Brookf… Danbur… METRO1…    1350    1622    2019
+ 4 0900… Fairfi… CT        84650 Danbur… Danbur… METRO1…    1350    1622    2019
+ 5 0900… Fairfi… CT        21752 Darien… Stamfo… METRO1…    1735    2127    2563
+ 6 0900… Fairfi… CT         7510 Easton… Bridge… METRO1…    1105    1332    1652
+ 7 0900… Fairfi… CT        61954 Fairfi… Bridge… METRO1…    1105    1332    1652
+ 8 0900… Fairfi… CT        62714 Greenw… Stamfo… METRO1…    1735    2127    2563
+ 9 0900… Fairfi… CT        19492 Monroe… Bridge… METRO1…    1105    1332    1652
+10 0900… Fairfi… CT        20249 New Ca… Stamfo… METRO1…    1735    2127    2563
+# … with 312 more rows, 7 more variables: rent_40_3 &lt;dbl&gt;, rent_40_4 &lt;dbl&gt;,
+#   rent_50_0 &lt;dbl&gt;, rent_50_1 &lt;dbl&gt;, rent_50_2 &lt;dbl&gt;, rent_50_3 &lt;dbl&gt;,
+#   rent_50_4 &lt;dbl&gt;, and abbreviated variable names ¹​county_name, ²​state_abbr,
+#   ³​population, ⁴​town_name, ⁵​hud_areaname, ⁶​hud_area_code, ⁷​rent_40_0,
+#   ⁸​rent_40_1, ⁹​rent_40_2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert state names to abbreviations</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>state_name_to_abbrev <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">match</span>(<span class="fu">toupper</span>(name), <span class="fu">toupper</span>(state.name))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>county_pop_cols <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"STNAME"</span>, <span class="st">"CTYNAME"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ESTIMATESBASE2020"</span>, <span class="st">"POPESTIMATE2022"</span>, </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"NPOPCHG2022"</span>, <span class="st">"NETMIG2022"</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>low_vacancy <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/Low-Vacancy-Counties-List-2022.xlsx"</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>county_pop <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/FY_2022_county_pop.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 3195 Columns: 51
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (5): SUMLEV, STATE, COUNTY, STNAME, CTYNAME
+dbl (46): REGION, DIVISION, ESTIMATESBASE2020, POPESTIMATE2020, POPESTIMATE2...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>low_vacancy <span class="ot">&lt;-</span> low_vacancy <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="st">"County Name"</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"county_name"</span>, <span class="st">"state"</span>), <span class="at">sep =</span> <span class="st">", "</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> metro_states) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="st">"Low Vac Geo Unit"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>county_pop <span class="ot">&lt;-</span> county_pop <span class="sc">|&gt;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(county_pop_cols) <span class="sc">|&gt;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(STNAME <span class="sc">!=</span> CTYNAME) <span class="sc">|&gt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">state_name =</span> state.abb[<span class="fu">state_name_to_abbrev</span>(STNAME)]) <span class="sc">|&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>STNAME) <span class="sc">|&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state_name <span class="sc">%in%</span> metro_states) <span class="sc">|&gt;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(CTYNAME, <span class="st">"Planning"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
+ℹ Please use `all_of()` or `any_of()` instead.
+  # Was:
+  data %&gt;% select(county_pop_cols)
+
+  # Now:
+  data %&gt;% select(all_of(county_pop_cols))
+
+See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>low_vacancy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 153 × 6
+   `County FIPS` county_name       state `Number Units` `Occupied Units` Perce…¹
+   &lt;chr&gt;         &lt;chr&gt;             &lt;chr&gt;          &lt;dbl&gt;            &lt;dbl&gt;   &lt;dbl&gt;
+ 1 09001         Fairfield County  CT              7884             7609    96.5
+ 2 09003         Hartford County   CT              8948             8455    94.5
+ 3 09005         Litchfield County CT               979              938    95.8
+ 4 09007         Middlesex County  CT               991              932    94.1
+ 5 09009         New Haven County  CT              9000             8578    95.3
+ 6 09011         New London County CT              2669             2602    97.5
+ 7 09013         Tolland County    CT               944              910    96.4
+ 8 09015         Windham County    CT              1090             1036    95  
+ 9 10001         Kent County       DE              1083             1025    94.7
+10 10003         New Castle County DE              3810             3616    94.9
+# … with 143 more rows, and abbreviated variable name ¹​`Percent Occupied`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>county_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 153 × 6
+   CTYNAME           ESTIMATESBASE2020 POPESTIMATE2022 NPOPCHG…¹ NETMI…² state…³
+   &lt;chr&gt;                         &lt;dbl&gt;           &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  
+ 1 Kent County                  181856          186946      2575    2521 DE     
+ 2 New Castle County            570721          575494      2780    2755 DE     
+ 3 Sussex County                237380          255956      8234    9001 DE     
+ 4 Atlantic County              274536          275638       508    1026 NJ     
+ 5 Bergen County                955746          952997     -1882   -3341 NJ     
+ 6 Burlington County            461863          466103      1692    1733 NJ     
+ 7 Camden County                523486          524907       783     283 NJ     
+ 8 Cape May County               95266           95634      -134     509 NJ     
+ 9 Cumberland County            154148          151356      -733    -727 NJ     
+10 Essex County                 862782          849477     -4644   -8007 NJ     
+# … with 143 more rows, and abbreviated variable names ¹​NPOPCHG2022,
+#   ²​NETMIG2022, ³​state_name</code></pre>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

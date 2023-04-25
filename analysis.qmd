@@ -1,0 +1,108 @@
+---
+title: "Real Estate Research"
+subtitle: "Independent Project"
+author: "Jonathan Grossman"
+format: html
+editor: visual
+---
+
+## General Idea of the Research
+
+This will be a large (very large) scale data analysis project focusing on potential targets for real estate development in the United States. The project will focus on counties as the targets, as opposed to smaller scale such as towns or districts. Moreover, the project will focus on the metropolitan area of the United States (NY, NJ, CT, and PA).
+
+In this project, I'm bringing together vast datasets into one mission. I'm taking data regarding population and census, income, fair market rents, population trends, and permitting trends nationwide. The research question is as follows:
+
+### Where are there opportunities to develop real estate?
+
+Specifically, we're going to be targetting the middle class. For this reason, the rent data being used and incorporated follows the 40-50th percentile of rents in counties nationwide.
+
+The data used in this project has been collected from the following sources. No data is my own.
+
+-   Permitting data: https://www.census.gov/construction/bps/index.html
+
+-   FMR data: https://www.huduser.gov/portal/datasets/fmr.html
+
+-   Vacancy data: https://www.huduser.gov/portal/datasets/lowvactpv.html
+
+-   Census data: https://www.census.gov/newsroom/press-releases/2023/population-estimates-counties.html
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+library(ggplot2)
+library(dplyr)
+library(readxl)
+```
+
+```{r}
+
+metro_states = c(
+  "NY", "NJ", "DE", "PA", "CT"
+)
+
+fmr_40percent <- read_excel("data/FY_23_FMR_40percent.xlsx")
+fmr_50percent <- read_excel("data/FY_23_FMR_50percent.xlsx")
+
+fmr_40percent <- fmr_40percent |>
+  filter(state_alpha %in% metro_states) 
+
+fmr_50percent <- fmr_50percent |> 
+  filter(state_alpha %in% metro_states) 
+
+
+fmr_40_50_towns <- inner_join(fmr_40percent, fmr_50percent, by = c("fips" = "fips2010"))
+
+fmr_cols = c(
+  "fips", "countyname", "state_alpha.x", "pop2020.x",
+  "town_name", "hud_areaname", "hud_area_code.x",
+  "fmr_0", "fmr_1", "fmr_2", "fmr_3", "fmr_4",
+  "rent_50_0", "rent_50_1", "rent_50_2", "rent_50_3", "rent_50_4"
+)
+
+fmr_40_50_towns <- fmr_40_50_towns |>
+  select(fmr_cols) |>
+  rename(
+    state_abbr = state_alpha.x, population = pop2020.x, 
+    county_name = countyname, hud_area_code = hud_area_code.x,
+    rent_40_0 = fmr_0, rent_40_1 = fmr_1, rent_40_2 = fmr_2,
+    rent_40_3 = fmr_3, rent_40_4 = fmr_4
+    )
+
+fmr_40_50_towns
+```
+
+```{r}
+
+# convert state names to abbreviations
+state_name_to_abbrev <- function(name) {
+  match(toupper(name), toupper(state.name))
+}
+
+county_pop_cols = c(
+  "STNAME", "CTYNAME",
+  "ESTIMATESBASE2020", "POPESTIMATE2022", 
+  "NPOPCHG2022", "NETMIG2022"
+)
+
+
+low_vacancy <- read_excel("data/Low-Vacancy-Counties-List-2022.xlsx")
+county_pop <- read_csv("data/FY_2022_county_pop.csv")
+
+low_vacancy <- low_vacancy |>
+  separate(col = "County Name", into = c("county_name", "state"), sep = ", ") |>
+  filter(state %in% metro_states) |>
+  select(-"Low Vac Geo Unit")
+
+county_pop <- county_pop |>
+  select(county_pop_cols) |>
+  filter(STNAME != CTYNAME) |>
+  mutate(state_name = state.abb[state_name_to_abbrev(STNAME)]) |>
+  select(-STNAME) |>
+  filter(state_name %in% metro_states) |>
+  filter(!str_detect(CTYNAME, "Planning"))
+
+
+low_vacancy
+county_pop
+
+```
